@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-import { HomePage } from '../../Home';
-import { WishPage } from '../../Wish';
-import { DreamPage } from '../../Dream';
+import { HomePage } from '@modules/Home';
+import { WishPage } from '@modules/Wish';
+import { DreamPage } from '@modules/Dream';
 
 export interface Location {
     url: string;
@@ -15,18 +15,16 @@ export const locations: Location[] = [
     {
         url: '/',
         path: '/',
-        Component: HomePage
+        Component: HomePage,
     },
     {
         url: '/wish',
         path: '/wish',
         Component: WishPage,
-        loadData: () => WishPage.getInitData()
     },
     {
         url: '/dream',
         path: '/dream',
         Component: DreamPage,
-        loadData: () => DreamPage.getInitData()
     }
 ];

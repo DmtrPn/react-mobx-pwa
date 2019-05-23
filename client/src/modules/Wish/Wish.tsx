@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Page } from '../common/Page';
+import { Page } from '@common/Page';
 
 import * as style from './Wish.scss';
 

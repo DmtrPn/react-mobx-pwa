@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import * as style from './NotFound.scss';
-import { Page } from '../common/Page';
+import { Page } from '@common/Page';
 
 export const NotFound = () => (
         <Page>

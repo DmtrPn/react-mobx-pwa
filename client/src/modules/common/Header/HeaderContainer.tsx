@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { withRouter } from 'react-router';
+import { withRouter, RouteComponentProps } from 'react-router-dom';
 
 import { Header, HeaderProps } from './Header';
 
 
-interface Props extends HeaderProps {
+interface Props extends RouteComponentProps, HeaderProps {
 }
 
 interface State {

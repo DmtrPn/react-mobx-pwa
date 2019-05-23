@@ -7,9 +7,9 @@ type InitialStateParams = {
 export class WishState {
 
     @observable
-    public wishes: InitialStateParams[] = [];
+    public wishes: { id: number, name: string }[] = [];
 
-    constructor(initialState?: any) {
+    constructor(initialState?: InitialStateParams) {
         this.wishes = (initialState && initialState.wishes)
             ? initialState.wishes
             : [];
