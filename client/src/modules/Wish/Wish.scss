@@ -1,0 +1,23 @@
+@import '../common/mixins/mixin';
+
+.root {
+    width: 300px;
+    margin: 30px;
+    padding: 50px;
+
+    text-align: center;
+
+    @include blockBoxShadow;
+}
+
+.title {
+    margin-bottom: 24px;
+
+    font-size: 16px;
+}
+
+.wish {
+    margin-bottom: 16px;
+
+    font-size: 14px;
+}

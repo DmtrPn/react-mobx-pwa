@@ -1,0 +1,9 @@
+.idea/
+node_modules/
+/build
+/public
+/dist
+IconType.ts
+*.log
+*.scss.d.ts
+*.css.d.ts

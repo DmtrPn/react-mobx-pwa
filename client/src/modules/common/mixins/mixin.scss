@@ -1,0 +1,6 @@
+$BodyBackground: #f8f8f8;
+$FontColor: #0b0b0b;
+
+@mixin blockBoxShadow {
+    box-shadow: 0 5px 7px 0 rgba(0, 0, 1, 0.1);
+}
