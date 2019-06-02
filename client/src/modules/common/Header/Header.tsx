@@ -3,13 +3,7 @@ import * as React from 'react';
 import * as style from './Header.scss';
 import { Navigation } from '../Navigation';
 
-export interface HeaderProps {
-}
-
-interface HeaderComponentProps extends HeaderProps {
-}
-
-export const Header = ({}: HeaderComponentProps): JSX.Element => {
+export function Header(): JSX.Element {
     return (
         <div className={style.root}>
             <div className={style.headerContent}>
@@ -17,4 +11,4 @@ export const Header = ({}: HeaderComponentProps): JSX.Element => {
             </div>
         </div>
     );
-};
+}

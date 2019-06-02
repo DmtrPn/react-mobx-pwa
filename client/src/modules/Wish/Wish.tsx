@@ -17,7 +17,7 @@ interface Props extends WishProps {
 }
 
 export function Wish({
-                         wishes
+    wishes
 }: Props): JSX.Element {
     return (
         <Page>

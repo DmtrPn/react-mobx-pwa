@@ -7,13 +7,14 @@ export interface PageProps {
     children?: React.ReactNode;
 }
 
-export const Page = ({
+export function Page({
     children
-}: PageProps): JSX.Element => (
+}: PageProps): JSX.Element {
+    return (
     <div className={style.root}>
         <Header />
         <div className={style.content}>
             {children}
         </div>
     </div>
-);
+)}

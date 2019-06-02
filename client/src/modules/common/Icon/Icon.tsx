@@ -1,10 +1,10 @@
 import * as React from 'react';
 
 import * as style from './Icon.scss';
-import { IconType } from './IconType';
+// import { IconType } from './IconType';
 
 export interface IconProps {
-    type: IconType;
+    type:  any;//IconType;
     onClick?: React.MouseEventHandler<SVGSVGElement>;
     color?: string;
     svgSize?: string | number;

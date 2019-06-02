@@ -5,8 +5,8 @@
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
     "jsx": "react",
-    "lib": ["es6", "dom"],
-    "module": "commonjs",
+    "lib": ["es6", "es2017", "dom"],
+    "module": "es6",
     "moduleResolution": "node",
     "noImplicitReturns": true,
     "noImplicitThis": true,
@@ -15,7 +15,7 @@
     "rootDir": "./",
     "sourceMap": true,
     "suppressImplicitAnyIndexErrors": true,
-    "target": "ES6",
+    "target": "es2017",
     "typeRoots": [
       "node_modules/@types",
       "@types"
@@ -25,11 +25,12 @@
       "@store": ["store/"],
       "@store/*": ["store/*"],
       "@api": ["api/"],
+      "@api/*": ["api/*"],
       "@modules/*": ["modules/*"],
       "@common/*": ["modules/common/*"]
     }
   },
-  "exclude": [
+  "å": [
     "node_modules",
     "dist"
   ]

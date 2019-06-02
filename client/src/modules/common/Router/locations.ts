@@ -8,7 +8,6 @@ export interface Location {
     url: string;
     path: string;
     Component?: React.ComponentType<any>;
-    loadData?: () => any;
 }
 
 export const locations: Location[] = [

@@ -2,7 +2,21 @@ import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import * as style from './Navigation.scss';
-import { locations } from '../Router';
+
+const locations: { url: string, label: string }[] = [
+    {
+        url: '/',
+        label: 'Главная',
+    },
+    {
+        url: '/wish',
+        label: 'Желания',
+    },
+    {
+        url: '/dream',
+        label: 'Мечты',
+    }
+];
 
 export const Navigation = (): JSX.Element => {
     return (
@@ -15,7 +29,7 @@ export const Navigation = (): JSX.Element => {
                     activeClassName={style.activeLink}
                     to={pageLocation.url}
                 >
-                    Link to {pageLocation.url}
+                    Link to {pageLocation.label}
                 </NavLink>
             )}
         </div>

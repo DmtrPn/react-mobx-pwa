@@ -1,7 +1,7 @@
 import { Icon } from './Icon';
-import { IconType } from './IconType';
+// import { IconType } from './IconType';
 
 export {
     Icon,
-    IconType
+    // IconType
 };

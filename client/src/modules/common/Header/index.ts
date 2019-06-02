@@ -1,4 +1,4 @@
-import { HeaderContainer as Header} from './HeaderContainer';
+import { Header} from './Header';
 
 export {
     Header
