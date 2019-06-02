@@ -8,7 +8,7 @@ export function HomePage(): JSX.Element {
     return (
         <Page>
             <div className={style.root}>
-                Simple React + mobx SSR boilerplate
+                Simple React + Mobx boilerplate
             </div>
         </Page>
     );

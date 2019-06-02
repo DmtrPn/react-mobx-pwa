@@ -5,7 +5,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 const fuse = FuseBox.init({
     homeDir: "src/",
     target: "browser@es6",
-    output: "public/$name.js",
+    output: "../public/$name.js",
     useTypescriptCompiler: true,
     allowSyntheticDefaultImports: true,
     cache: false,
@@ -28,7 +28,7 @@ const fuse = FuseBox.init({
         ],
         isProduction && QuantumPlugin({
             css: {
-                path: "styles.min.css",
+                path: "styles.css",
             },
         })
     ]
