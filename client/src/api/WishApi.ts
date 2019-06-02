@@ -2,10 +2,27 @@ import { axios } from '../lib/axios';
 
 const WISH_URL = '/api/wish';
 
+const DEFAULT_WISHES = [
+    {
+        id: 1,
+        name: 'Apple'
+    },
+    {
+        id: 2,
+        name: 'Book'
+    }
+];
+
 export class WishApi {
     public static async getWishList(): Promise<{ id: number, name: string }[]> {
-        const res = await axios.get(`${WISH_URL}`);
+        let result = DEFAULT_WISHES;
+        try {
+            const res = await axios.get(`${WISH_URL}`);
 
-        return res.data;
+            result = res.data;
+        } catch (e) {
+        }
+
+        return result;
     }
 }
