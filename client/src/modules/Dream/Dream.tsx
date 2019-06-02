@@ -9,12 +9,12 @@ export interface DreamProps {
 interface Props extends DreamProps {
     dreams: {
         id: number,
-        name: string
+        name: string,
     }[];
 }
 
 export function Dream({
-    dreams
+    dreams,
 }: Props): JSX.Element {
     return (
         <Page>
@@ -28,7 +28,7 @@ export function Dream({
                         className={style.dream}
                     >
                         {dream.name}
-                    </div>
+                    </div>,
                 )}
             </div>
         </Page>

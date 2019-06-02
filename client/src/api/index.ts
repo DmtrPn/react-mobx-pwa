@@ -3,5 +3,5 @@ import { WishApi } from './WishApi';
 
 export {
     DreamApi,
-    WishApi
+    WishApi,
 };

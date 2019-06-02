@@ -13,7 +13,7 @@ export function Router(): JSX.Element {
                     key={location.url}
                     path={location.url}
                     component={location.Component}
-                />
+                />,
             )}
             <Route component={NotFound} />
         </Switch>

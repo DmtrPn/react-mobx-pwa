@@ -5,12 +5,12 @@ const WISH_URL = '/api/wish';
 const DEFAULT_WISHES = [
     {
         id: 1,
-        name: 'Apple'
+        name: 'Apple',
     },
     {
         id: 2,
-        name: 'Book'
-    }
+        name: 'Book',
+    },
 ];
 
 export class WishApi {

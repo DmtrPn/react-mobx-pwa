@@ -5,12 +5,12 @@ const DREAM_URL = '/api/dream';
 const DEFAULT_DREAMS = [
     {
         id: 1,
-        name: 'Fly'
+        name: 'Fly',
     },
     {
         id: 2,
-        name: 'Moon'
-    }
+        name: 'Moon',
+    },
 ];
 
 export class DreamApi {

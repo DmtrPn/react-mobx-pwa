@@ -4,8 +4,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build-dev": "yarn csscomb && yarn typedCss && node fuse",
+    "build-dev": "yarn tslint && yarn csscomb && yarn typedCss && node fuse",
     "build": "NODE_ENV=production node fuse",
+    "tslint": "node_modules/tslint/bin/tslint -c tslint.json src/**/*.{ts,tsx} --fix",
     "typedCss": "node node_modules/typed-css-modules/lib/cli.js -p src/**/*.scss",
     "csscomb": "node_modules/csscomb/bin/csscomb -c .csscomb.json src"
   },
@@ -27,6 +28,8 @@
     "react-dom": "16.8.6",
     "react-router-dom": "5.0.0",
     "tslib": "1.9.3",
+    "tslint": "5.17.0",
+    "tslint-config-airbnb": "5.11.1",
     "typed-css-modules": "0.4.2",
     "typescript": "3.5.1"
   }

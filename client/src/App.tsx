@@ -16,5 +16,5 @@ hydrate(
             <Router />
         </BrowserRouter>
     </Provider>,
-    document.getElementById('app')
+    document.getElementById('app'),
 );

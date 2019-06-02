@@ -4,7 +4,6 @@ import { Page } from '@common/Page';
 
 import * as style from './Wish.scss';
 
-
 export interface WishProps {
 
 }
@@ -12,12 +11,12 @@ export interface WishProps {
 interface Props extends WishProps {
     wishes: {
         id: number,
-        name: string
+        name: string,
     }[];
 }
 
 export function Wish({
-    wishes
+    wishes,
 }: Props): JSX.Element {
     return (
         <Page>
@@ -31,7 +30,7 @@ export function Wish({
                         className={style.wish}
                     >
                         {wish.name}
-                    </div>
+                    </div>,
                 )}
             </div>
         </Page>

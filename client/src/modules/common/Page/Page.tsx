@@ -8,7 +8,7 @@ export interface PageProps {
 }
 
 export function Page({
-    children
+    children,
 }: PageProps): JSX.Element {
     return (
     <div className={style.root}>
@@ -16,5 +16,5 @@ export function Page({
         <div className={style.content}>
             {children}
         </div>
-    </div>
-)}
+    </div>);
+}
