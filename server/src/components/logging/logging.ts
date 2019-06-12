@@ -1,6 +1,7 @@
+const intel = require('intel');
+
 import { TerminalConfig } from './TerminalConfig';
 import { FileConfig } from './FileConfig';
-const intel = require('intel');
 
 const config = (process.env.WTG_ENV && process.env.WTG_ENV === 'prod')
     ? new FileConfig()

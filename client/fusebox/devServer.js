@@ -19,9 +19,3 @@ module.exports = async context => {
 
     await fuse.run();
 };
-
-// module.exports = clean = async (fuseContext) => {
-//     await src('./public')
-//         .clean(public)
-//         .exec();
-// };

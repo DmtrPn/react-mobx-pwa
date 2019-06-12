@@ -1,6 +1,7 @@
 import * as morgan from 'morgan';
 import { Request, Response } from 'express';
 import { Middleware, ExpressMiddlewareInterface } from 'routing-controllers';
+
 import { Express as ExpressLogger } from '../logging';
 import { getStream } from '../logging/getStream';
 

@@ -3,7 +3,7 @@ import { observer, inject } from 'mobx-react';
 
 import { Dream, DreamProps } from './Dream';
 import { DreamApi } from '@api';
-import { STORE_NAME, DreamState } from '@store';
+import { DreamState } from '@store/Dream';
 
 interface Props extends DreamProps, StoreProps {
 }
@@ -12,7 +12,7 @@ interface StoreProps {
     dreamState: DreamState;
 }
 
-@inject(STORE_NAME.DreamState)
+@inject(DreamState.Name)
 @observer
 export class DreamContainer extends React.Component<Props> {
 

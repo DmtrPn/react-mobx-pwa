@@ -1,22 +1,18 @@
 import { observable, action } from 'mobx';
 
-type InitialStateParams = {
-    wishes: { id: number, name: string }[];
-};
+export interface WishParams {
+    id: number;
+    name: string;
+}
 
 export class WishState {
+    public static Name = 'wish';
 
     @observable
-    public wishes: { id: number, name: string }[] = [];
-
-    constructor(initialState?: InitialStateParams) {
-        this.wishes = (initialState && initialState.wishes)
-            ? initialState.wishes
-            : [];
-    }
+    public wishes: WishParams[] = [];
 
     @action
-    public setWishes(wishes: any[]) {
+    public setWishes(wishes: WishParams[]) {
         this.wishes = wishes;
     }
 }

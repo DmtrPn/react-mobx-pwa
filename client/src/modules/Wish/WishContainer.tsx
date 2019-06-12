@@ -3,7 +3,8 @@ import { observer, inject } from 'mobx-react';
 
 import { Wish, WishProps } from './Wish';
 import { WishApi } from '@api';
-import { StoreState, WishState } from '@store';
+import { WishState } from '@store/Wish';
+import { StoreState } from '@store';
 
 interface Props extends StoreProps, WishProps {
 }
@@ -13,7 +14,7 @@ interface StoreProps {
 }
 
 @inject<StoreState, Props, StoreProps, null>((stores, props) => ({
-    wishState: stores.wishState,
+    wishState: stores.wish,
 }))
 @observer
 export class WishContainer extends React.Component<Props> {

@@ -1,25 +1,14 @@
 import { DreamState } from './Dream';
 import { WishState } from './Wish';
 
-const STORE_NAME = {
-    DreamState: 'dreamState',
-    WishState: 'wishState',
-};
-
-const STORES = {
-    [STORE_NAME.DreamState]: DreamState,
-    [STORE_NAME.WishState]: WishState,
-};
-
-interface StoreState {
-    dreamState: DreamState;
-    wishState: WishState;
+export interface StoreState {
+    dream: DreamState;
+    wish: WishState;
 }
 
-export {
-    StoreState,
-    STORE_NAME,
-    STORES,
-    DreamState,
-    WishState,
-};
+export function createStore(): StoreState {
+    return {
+        dream: new DreamState(),
+        wish: new WishState(),
+    };
+}

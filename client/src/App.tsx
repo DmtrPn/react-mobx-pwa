@@ -2,9 +2,8 @@ import * as React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'mobx-react';
-import * as lodash from 'lodash';
 
-import { STORES } from './store';
+import { createStore } from '@store';
 import { Router } from '@common/Router';
 import { swRegister } from './swRegister';
 
@@ -12,10 +11,10 @@ if ('serviceWorker' in navigator) {
     swRegister();
 }
 
-const stores = lodash.mapValues(STORES, (store, name) => new store());
+const store = createStore();
 
 render(
-    <Provider { ...stores } >
+    <Provider { ...store } >
         <BrowserRouter>
             <Router />
         </BrowserRouter>

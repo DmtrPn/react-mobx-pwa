@@ -1,4 +1,5 @@
 import * as cluster from 'cluster';
+
 import { Launcher } from './Launcher';
 import { Main } from '../../../components/logging';
 

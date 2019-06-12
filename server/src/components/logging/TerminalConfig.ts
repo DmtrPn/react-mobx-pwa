@@ -1,5 +1,6 @@
-import { IntelConfig } from './IntelConfig';
 const intel = require('intel');
+
+import { IntelConfig } from './IntelConfig';
 
 export class TerminalConfig extends IntelConfig {
     public get handlers(): Object {

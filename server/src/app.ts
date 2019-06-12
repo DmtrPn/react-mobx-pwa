@@ -1,10 +1,11 @@
 import 'reflect-metadata';
 import { resolve } from 'path';
+import * as dotenv from 'dotenv';
+
 import { Application } from './core/application';
 import { middlewares } from './components/middlewares';
-import * as dotenv from 'dotenv';
-dotenv.config();
 
+dotenv.config();
 
 const CONTROLLERS_PATH = resolve(__dirname, 'modules/**/*Controller.js');
 
