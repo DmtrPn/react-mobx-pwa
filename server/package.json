@@ -11,14 +11,14 @@
     "tslint": "node_modules/tslint/bin/tslint -c tslint.json src/**/*.ts"
   },
   "dependencies": {
-    "axios": "0.16.2",
+    "axios": "0.19.0",
     "body-parser": "1.18.2",
     "dotenv": "8.0.0",
     "express": "4.16.1",
     "express-session": "^1.16.1",
     "helmet": "3.9.0",
     "intel": "1.2.0",
-    "lodash": "4.17.4",
+    "lodash": "4.17.11",
     "logrotate-stream": "0.2.5",
     "morgan": "1.9.1",
     "routing-controllers": "0.7.6",
