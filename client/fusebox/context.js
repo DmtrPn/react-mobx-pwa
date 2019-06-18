@@ -1,5 +1,5 @@
 const { context } = require('fuse-box/sparky');
-const { FuseBox, WebIndexPlugin, SassPlugin, QuantumPlugin, CSSModules, CSSPlugin } = require('fuse-box');
+const { FuseBox, WebIndexPlugin, SassPlugin, QuantumPlugin, CSSModulesPlugin, CSSPlugin } = require('fuse-box');
 
 context(
     class  {
@@ -35,7 +35,7 @@ context(
                     }),
                     [
                         SassPlugin(),
-                        CSSModules({
+                        CSSModulesPlugin({
                             useDefault: false
                         }),
                         CSSPlugin()

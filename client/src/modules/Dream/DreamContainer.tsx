@@ -9,7 +9,7 @@ interface Props extends DreamProps, StoreProps {
 }
 
 interface StoreProps {
-    dreamState: DreamState;
+    dream: DreamState;
 }
 
 @inject(DreamState.Name)
@@ -17,19 +17,19 @@ interface StoreProps {
 export class DreamContainer extends React.Component<Props> {
 
     public async componentDidMount() {
-        const { dreamState } = this.props;
+        const { dream } = this.props;
 
         const dreams = await DreamApi.getDreamList();
 
-        dreamState.setDreams(dreams);
+        dream.setDreams(dreams);
     }
 
     public render() {
-        const { dreamState } = this.props;
+        const { dream } = this.props;
 
         return (
             <Dream
-                dreams={dreamState.dreams}
+                dreams={dream.dreams}
             />
         );
     }
