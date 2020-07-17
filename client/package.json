@@ -20,7 +20,7 @@
     "csscomb": "4.3.0",
     "fuse-box": "3.7.1",
     "http-proxy-middleware": "0.19.1",
-    "lodash": "4.17.11",
+    "lodash": "4.17.19",
     "mobx": "5.9.4",
     "mobx-react": "5.4.4",
     "node-sass": "4.12.0",
