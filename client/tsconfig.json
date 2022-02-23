@@ -1,12 +1,13 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "target": "es2017",
+    "jsx": "react",
     "allowJs": true,
+    "module": "es6",
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
-    "jsx": "react",
-    "lib": ["es6", "es2017", "dom"],
-    "module": "es6",
+    "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "noImplicitReturns": true,
     "noImplicitThis": true,
@@ -15,7 +16,15 @@
     "rootDir": "./",
     "sourceMap": true,
     "suppressImplicitAnyIndexErrors": true,
-    "target": "es2017",
+    "esModuleInterop": true,
+    "useDefineForClassFields": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "lib": ["es6", "ES2019", "dom"],
+    "strictNullChecks": true,
+    "strict": true,
+    "inlineSources": true,
+    "sourceRoot": "/",
     "typeRoots": [
       "node_modules/@types",
       "@types"
@@ -27,11 +36,13 @@
       "@api": ["api/"],
       "@api/*": ["api/*"],
       "@modules/*": ["modules/*"],
-      "@common/*": ["modules/common/*"]
+      "@common/*": ["modules/common/*"],
+      "@utils/*": ["utils/*"]
     }
   },
-  "å": [
+  "exclude": [
     "node_modules",
-    "dist"
+    "dist",
+    "src/**/*.scss.d.ts"
   ]
 }

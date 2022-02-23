@@ -3,15 +3,13 @@ import { render } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'mobx-react';
 
-import { createStore } from '@store';
+import { store } from '@store';
 import { Router } from '@common/Router';
-import { swRegister } from './swRegister';
-
-if ('serviceWorker' in navigator) {
-    swRegister();
-}
-
-const store = createStore();
+// import { swRegister } from './swRegister';
+//
+// if ('serviceWorker' in navigator) {
+//     swRegister();
+// }
 
 render(
     <Provider { ...store } >

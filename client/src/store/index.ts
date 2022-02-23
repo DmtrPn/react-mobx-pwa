@@ -1,14 +1,12 @@
-import { DreamState } from './Dream';
-import { WishState } from './Wish';
+import { DreamStore } from './Dream/Dream';
+import { WishStore } from './Wish/Wish';
 
 export interface StoreState {
-    dream: DreamState;
-    wish: WishState;
+    dreamStore: DreamStore;
+    wishStore: WishStore;
 }
 
-export function createStore(): StoreState {
-    return {
-        dream: new DreamState(),
-        wish: new WishState(),
-    };
-}
+export const store: StoreState = {
+    dreamStore: new DreamStore(),
+    wishStore: new WishStore(),
+};

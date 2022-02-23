@@ -15,24 +15,25 @@ context(
             return FuseBox.init({
                 homeDir: 'src/',
                 target: 'browser@es6',
-                output: '../public/$name.js',
+                output: '../public/static/$name.js',
                 useTypescriptCompiler: true,
                 allowSyntheticDefaultImports: true,
                 log: {
                     enabled: !this.isProduction,
                     showBundledFiles: false
                 },
-                cache: true,
+                cache: !this.isProduction,
                 alias: {
                     '@store/*': '~/store/',
                     '@api/*': '~/api/',
                     '@modules/*': '~/modules/',
-                    '@common/*': '~/modules/common/'
+                    '@common/*': '~/modules/common/',
+                    '@utils/*': '~/utils/',
                 },
                 plugins: [
-                    WebIndexPlugin({
-                        template : 'src/index.html'
-                    }),
+                    // WebIndexPlugin({
+                    //     template : 'src/index.html'
+                    // }),
                     [
                         SassPlugin(),
                         CSSModulesPlugin({
@@ -41,8 +42,12 @@ context(
                         CSSPlugin()
                     ],
                     this.isProduction && QuantumPlugin({
+                        bakeApiIntoBundle: true,
+                        replaceProcessEnv: true,
+                        processPolyfill: true,
+                        uglify: { es6: true },
                         css: {
-                            path: 'styles.css',
+                            path: '/styles.css',
                         },
                     })
                 ]

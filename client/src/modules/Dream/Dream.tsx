@@ -2,15 +2,13 @@ import * as React from 'react';
 
 import * as style from './Dream.scss';
 import { Page } from '@common/Page';
+import { DreamParams } from '@store/Dream';
 
 export interface DreamProps {
 }
 
 interface Props extends DreamProps {
-    dreams: {
-        id: number,
-        name: string,
-    }[];
+    dreams: DreamParams[];
 }
 
 export function Dream({

@@ -7,7 +7,7 @@ import { DreamPage } from '@modules/Dream';
 export interface Location {
     url: string;
     path: string;
-    Component?: React.ComponentType<any>;
+    Component: React.ComponentType<any>;
 }
 
 export const locations: Location[] = [
@@ -25,5 +25,5 @@ export const locations: Location[] = [
         url: '/dream',
         path: '/dream',
         Component: DreamPage,
-    }
+    },
 ];

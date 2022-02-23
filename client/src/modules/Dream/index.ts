@@ -1,5 +1,1 @@
-import { DreamContainer as DreamPage } from './DreamContainer';
-
-export {
-    DreamPage
-};
+export { DreamContainer as DreamPage } from './DreamContainer';

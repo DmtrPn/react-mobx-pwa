@@ -1,6 +1,6 @@
 const appServerKey = 'BLDw1TkDOUhE3ufhvgq0jpeOjN7s0QidmKcKnqQxQ5--vlawzEYO556z5cXSsoq8uCWqp3_E6x-g2Y1UcKOU2iI';
 
-function urlB64ToUint8Array(base64String) {
+function urlB64ToUint8Array(base64String: string) {
     const padding = '='.repeat((4 - base64String.length % 4) % 4);
     const base64 = (base64String + padding)
         .replace(/\-/g, '+')
@@ -16,9 +16,9 @@ function urlB64ToUint8Array(base64String) {
 }
 
 export const swRegister = () => {
-    let endpoint;
-    let key;
-    let authSecret;
+    let endpoint: string;
+    let key: string;
+    let authSecret: string;
 
     navigator.serviceWorker.register('./sw.js')
         .then((registration) => {
@@ -33,37 +33,40 @@ export const swRegister = () => {
                 });
         }).then((subscription) => {
         // get public key for user
-        const rawKey = subscription.getKey
+            const rawKey = subscription.getKey
             ? subscription.getKey('p256dh')
             : '';
-        key = rawKey
-            ? btoa(String.fromCharCode.apply(null, new Uint8Array(rawKey)))
-            : '';
-        const rawAuthSecret = subscription.getKey
-            ? subscription.getKey('auth')
-            : '';
-        authSecret = rawAuthSecret
-            ? btoa(String.fromCharCode.apply(null, new Uint8Array(rawAuthSecret)))
-            : '';
+            key = rawKey
+                // @ts-ignore
+                ? btoa(String.fromCharCode.apply(null, new Uint8Array(rawKey)))
+                : '';
+            const rawAuthSecret = subscription.getKey
+                ? subscription.getKey('auth')
+                : '';
+            authSecret = rawAuthSecret
+                // @ts-ignore
+                ? btoa(String.fromCharCode.apply(null, new Uint8Array(rawAuthSecret)))
+                : '';
 
-        endpoint = subscription.endpoint;
+            endpoint = subscription.endpoint;
 
-        fetch('/api/push/register', {
-            method: 'post',
-            headers: {
-                'Content-type': 'application/json',
-            },
-            body: JSON.stringify({
-                endpoint: subscription.endpoint,
-                key,
-                authSecret,
-            }),
-        });
-    }).catch(error => { console.log('ERROE: ', error)});
+            fetch('/api/push/register', {
+                method: 'post',
+                headers: {
+                    'Content-type': 'application/json',
+                },
+                body: JSON.stringify({
+                    key,
+                    authSecret,
+                    endpoint: subscription.endpoint,
+                }),
+            });
+        // tslint:disable-next-line:ter-arrow-parens
+        }).catch(error => { console.log('ERROE: ', error); });
 
     const ele = document.getElementById('getPush');
-    ele.onclick = function() {
-        const payload = 'Date: ' + new Date().toUTCString();
+    ele!.onclick = function() {
+        const payload = `Date: ${new Date().toUTCString()}`;
         const delay = 5;
 
         fetch('/api/push/notification', {

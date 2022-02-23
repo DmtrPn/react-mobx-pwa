@@ -18,7 +18,8 @@ export class DreamApi {
         let result = DEFAULT_DREAMS;
 
         try {
-            result = await axios.get(`${DREAM_URL}`);
+            const res = await axios.get(`${DREAM_URL}`);
+            result = res.data;
         } catch (e) {
         }
 

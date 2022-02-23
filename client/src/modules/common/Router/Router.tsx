@@ -1,21 +1,21 @@
 import * as React from 'react';
-import { Switch, Route } from 'react-router';
+import { Routes, Route } from 'react-router';
 
 import { locations } from './locations';
 import { NotFound } from  '@modules/notFound';
 
 export function Router(): JSX.Element {
     return (
-        <Switch>
+        <Routes>
             {locations.map(location =>
                 <Route
-                    exact
+                    // index
                     key={location.url}
                     path={location.url}
-                    component={location.Component}
+                    element={React.createElement(location.Component)}
                 />,
             )}
-            <Route component={NotFound} />
-        </Switch>
+            <Route children={NotFound} />
+        </Routes>
     );
 }

@@ -22,6 +22,7 @@ class Launcher {
     protected startServer(): void {
         const host = this.config.host;
         let port: number;
+        // console.log
         argv.port ? port = argv.port : port = this.config.port;
         this.app.listen({ host, port }, () => {
             Main.info(`Server started at http://${host}:${port}`);

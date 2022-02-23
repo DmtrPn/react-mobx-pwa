@@ -4,18 +4,18 @@ module.exports = async context => {
     const app = fuse.bundle('app').instructions(" > App.tsx");
 
     app.watch();
-    app.hmr();
-
-    fuse.dev({
-        port: 4444,
-        fallback: 'index.html',
-        proxy: {
-            '/api': {
-                target: "http://0.0.0.0:3000",
-                changeOrigin: true,
-            },
-        },
-    });
+    // app.hmr();
+    //
+    // fuse.dev({
+    //     port: 4444,
+    //     fallback: 'index.html',
+    //     proxy: {
+    //         '/api': {
+    //             target: "http://0.0.0.0:3000",
+    //             changeOrigin: true,
+    //         },
+    //     },
+    // });
 
     await fuse.run();
 };

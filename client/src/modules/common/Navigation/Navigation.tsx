@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
+import classnames from 'classnames';
 
 import * as style from './Navigation.scss';
 
@@ -23,10 +24,12 @@ export const Navigation = (): JSX.Element => {
         <div className={style.linksList}>
             {locations.map(pageLocation =>
                 <NavLink
-                    exact
+                    // exact
                     key={pageLocation.url}
-                    className={style.link}
-                    activeClassName={style.activeLink}
+                    className={({ isActive }) => isActive
+                        ? classnames([style.link, style.activeLink])
+                        : style.link
+                    }
                     to={pageLocation.url}
                 >
                     Link to {pageLocation.label}
