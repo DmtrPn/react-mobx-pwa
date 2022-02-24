@@ -7,7 +7,7 @@ import { middlewares } from './components/middlewares';
 
 dotenv.config();
 
-const CONTROLLERS_PATH = resolve(__dirname, 'modules/**/*Controller.js');
+const CONTROLLERS_PATH = resolve(__dirname, 'controllers/**/*Controller.js');
 
 const app = new Application();
 

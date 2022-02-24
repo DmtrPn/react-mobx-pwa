@@ -36,6 +36,7 @@
       "@api": ["api/"],
       "@api/*": ["api/*"],
       "@modules/*": ["modules/*"],
+      "@components/*": ["components/*"],
       "@common/*": ["modules/common/*"],
       "@utils/*": ["utils/*"]
     }
