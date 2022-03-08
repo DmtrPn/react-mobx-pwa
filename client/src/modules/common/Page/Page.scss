@@ -1,4 +1,4 @@
-@import '../mixins/mixin';
+@import '../../../components/mixins/mixin';
 
 html {
     box-sizing: border-box;
@@ -7,6 +7,10 @@ html {
 body {
     border: 0;
     background-color: $BodyBackground;
+
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-style: normal;
 }
 
 *,
@@ -23,9 +27,6 @@ body {
     text-align: center;
 
     color: $FontColor;
-
-    font-weight: 500;
-    font-style: normal;
 }
 
 .content {

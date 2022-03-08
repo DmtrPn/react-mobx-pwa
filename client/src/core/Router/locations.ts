@@ -21,9 +21,4 @@ export const locations: Location[] = [
         path: '/wish',
         Component: WishPage,
     },
-    // {
-    //     url: '/dream',
-    //     path: '/dream',
-    //     Component: DreamPage,
-    // },
 ];

@@ -39,7 +39,6 @@
     "tslint-config-airbnb": "5.11.1",
     "typed-css-modules": "0.4.2",
     "typescript": "4.5.5",
-    "typescript-ioc": "3.2.2",
     "uglify-es": "3.3.9"
   }
 }

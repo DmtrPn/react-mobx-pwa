@@ -1,6 +1,8 @@
 import * as React from 'react';
 
 import * as style from './Page.scss';
+import './reset.scss';
+
 import { Header } from '../Header';
 
 export interface PageProps {

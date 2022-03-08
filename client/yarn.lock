@@ -2146,16 +2146,6 @@ lodash.camelcase@^4.3.0:
   resolved "https://registry.yarnpkg.com/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
   integrity sha1-soqmKIorn8ZRA1x3EfZathkDMaY=
 
-lodash.get@^4.4.2:
-  version "4.4.2"
-  resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
-  integrity sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
-
-lodash.set@^4.3.2:
-  version "4.3.2"
-  resolved "https://registry.yarnpkg.com/lodash.set/-/lodash.set-4.3.2.tgz#d8757b1da807dde24816b0d6a84bea1a76230b23"
-  integrity sha1-2HV7HagH3eJIFrDWqEvqGnYjCyM=
-
 lodash@4.17.21, lodash@^4.0.0, lodash@^4.17.11, lodash@^4.17.15, lodash@^4.3.0, lodash@~4.17.10:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
@@ -3083,7 +3073,7 @@ redent@^3.0.0:
     indent-string "^4.0.0"
     strip-indent "^3.0.0"
 
-reflect-metadata@^0.1.12, reflect-metadata@^0.1.13:
+reflect-metadata@^0.1.12:
   version "0.1.13"
   resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.13.tgz#67ae3ca57c972a2aa1642b10fe363fe32d49dc08"
   integrity sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg==
@@ -3889,15 +3879,6 @@ typed-css-modules@0.4.2:
     is-there "^4.4.2"
     mkdirp "^0.5.1"
     yargs "^8.0.2"
-
-typescript-ioc@3.2.2:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/typescript-ioc/-/typescript-ioc-3.2.2.tgz#5250a3691ea1d9425cbac22a44e8d6efb9584204"
-  integrity sha512-NI09BFj213x8vqOboOgrQt94MdNfKuXi68pnp4obT9a3uRk5cVjTPagLwkvZJXpSN4iV3sbSGhlQgY2uHEBhoA==
-  dependencies:
-    lodash.get "^4.4.2"
-    lodash.set "^4.3.2"
-    reflect-metadata "^0.1.13"
 
 typescript@4.5.5:
   version "4.5.5"
