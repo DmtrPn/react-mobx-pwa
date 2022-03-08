@@ -1,7 +1,7 @@
 module.exports = async context => {
     const fuse = context.getConfig();
 
-    const app = fuse.bundle('app').instructions(" > App.tsx");
+    const app = fuse.bundle('app').instructions(" > app.ts");
 
     app.watch();
     // app.hmr();

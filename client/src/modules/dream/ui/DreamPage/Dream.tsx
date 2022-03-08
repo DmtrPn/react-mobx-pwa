@@ -1,8 +1,9 @@
 import * as React from 'react';
 
 import * as style from './Dream.scss';
+
 import { Page } from '@common/Page';
-import { DreamParams } from '@store/Dream';
+import { DreamParams } from '@dream/store/Dream';
 
 export interface DreamProps {
 }

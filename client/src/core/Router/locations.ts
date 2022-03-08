@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { HomePage } from '@modules/Home';
 import { WishPage } from '@modules/Wish';
-import { DreamPage } from '@modules/Dream';
+// import { DreamPage } from '@modules/dream/ui/DreamPage';
 
 export interface Location {
     url: string;
@@ -20,10 +20,5 @@ export const locations: Location[] = [
         url: '/wish',
         path: '/wish',
         Component: WishPage,
-    },
-    {
-        url: '/dream',
-        path: '/dream',
-        Component: DreamPage,
     },
 ];
