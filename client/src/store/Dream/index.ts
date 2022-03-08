@@ -1,2 +1,2 @@
-export * from './dreamService';
-export * from './Dream';
+export * from '@modules/dream/services/dreamService';
+export * from '@modules/dream/store/Dream';

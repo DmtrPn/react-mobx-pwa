@@ -1,4 +1,4 @@
-import { DreamStore } from './Dream/Dream';
+import { DreamStore } from '@modules/dream/store/Dream';
 import { WishStore } from './Wish/Wish';
 
 export interface StoreState {

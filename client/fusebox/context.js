@@ -27,8 +27,12 @@ context(
                     '@store/*': '~/store/',
                     '@api/*': '~/api/',
                     '@modules/*': '~/modules/',
+                    '@dream/*': '~/modules/dream/',
                     '@common/*': '~/modules/common/',
+                    '@components/*': '~/components/',
                     '@utils/*': '~/utils/',
+                    '@core/*': '~/core/',
+                    '@facades/*': '~/facades/',
                 },
                 plugins: [
                     // WebIndexPlugin({

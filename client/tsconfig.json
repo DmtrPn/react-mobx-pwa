@@ -31,11 +31,14 @@
     ],
     "baseUrl": "./src",
     "paths": {
+      "@facades": ["facades/"],
       "@store": ["store/"],
       "@store/*": ["store/*"],
+      "@core/*": ["core/*"],
       "@api": ["api/"],
       "@api/*": ["api/*"],
       "@modules/*": ["modules/*"],
+      "@dream/*": ["modules/dream/*"],
       "@components/*": ["components/*"],
       "@common/*": ["modules/common/*"],
       "@utils/*": ["utils/*"]

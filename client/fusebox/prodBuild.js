@@ -3,7 +3,7 @@ module.exports = async context => {
 
     const fuse = context.getConfig();
 
-    fuse.bundle('app').instructions(" > App.tsx");
+    fuse.bundle('app').instructions(" > app.ts");
 
     await fuse.run();
 };

@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { observer, inject } from 'mobx-react';
 
-import { DreamStore, dreamService } from '@store/Dream';
+import { DreamStore } from '@dream/store';
+import { dreamService } from '@dream/services';
 
 import { Dream, DreamProps } from './Dream';
 
