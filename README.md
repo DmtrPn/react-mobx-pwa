@@ -1,7 +1,7 @@
 # react-mobx-pwa
 
 
-###2 options for organizing modules on the client
+### 2 options for organizing modules on the client
 
 #### module = page
 - container and template `modules/Wish`
@@ -16,7 +16,7 @@
 - store `modules/dream/store`
 
 
-###folders
+### folders
 - `api` - server interaction
 - `components` - simple (don't use store) common components like input, icons etc
 - `core` - App render and routes with locations
