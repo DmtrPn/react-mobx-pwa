@@ -1,6 +1,3 @@
-// import { User } from 'wtg-types/backend';
-
+// import { SessionOptions } from 'express-session';
 export interface Session {
-    user: any;
-    lastActionTime: number;
 }

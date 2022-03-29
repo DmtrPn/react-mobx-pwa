@@ -1,19 +1,11 @@
-import 'reflect-metadata';
-import { resolve } from 'path';
-import * as dotenv from 'dotenv';
+import './bootstrap';
 
-import { Application } from './core/application';
-import { middlewares } from './components/middlewares';
+import { Application } from '@core/application';
 
-dotenv.config();
+async function bootstrap() {
+    const app = new Application();
+    await app.init();
+    app.start();
+}
 
-const CONTROLLERS_PATH = resolve(__dirname, 'controllers/**/*Controller.js');
-
-const app = new Application();
-
-app.init([CONTROLLERS_PATH], middlewares);
-app.start();
-
-process.on('unhandledRejection', (reason, p) => {
-    console.log('Unhandled Rejection at: Promise', p, 'reason:', reason);
-});
+bootstrap();

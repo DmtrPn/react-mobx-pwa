@@ -1,11 +1,9 @@
-import { DebugLoggingMiddleware } from './DebugLoggingMiddleware';
-import { ErrorHandlingMiddleware } from './ErrorHandlingMiddleware';
-import { WarnLoggingMiddleware } from './WarnLoggingMiddleware';
+import { RequestIdMiddleware } from './RequestIdMiddleware';
+import { Session } from './Session';
 
 const middlewares = [
-    DebugLoggingMiddleware,
-    ErrorHandlingMiddleware,
-    WarnLoggingMiddleware,
+    RequestIdMiddleware,
+    Session,
 ];
 
 export { middlewares };
