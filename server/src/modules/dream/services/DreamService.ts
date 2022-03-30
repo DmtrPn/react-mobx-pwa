@@ -1,6 +1,3 @@
-import { Injectable } from '@nestjs/common';
-
-@Injectable()
 export class DreamService {
 
     public async getDreams(): Promise<{ id: number, name: string }[]> {

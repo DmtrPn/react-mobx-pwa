@@ -2,10 +2,10 @@ import { Controller, Get } from '@nestjs/common';
 
 import { DreamService } from '@modules/dream/services';
 
-@Controller('/api/dream')
+@Controller('dream')
 export class DreamController {
 
-    private dreamService: DreamService;
+    private dreamService = new DreamService();
 
     @Get('/')
     public async getDreams(): Promise<{ id: number, name: string }[]> {
