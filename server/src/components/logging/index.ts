@@ -1,3 +1,2 @@
-import { Main, Express } from './logging';
-
-export { Main, Express };
+export * from './LoggerFactory';
+export * from './LoggingInterceptor';

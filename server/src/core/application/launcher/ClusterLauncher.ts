@@ -1,13 +1,14 @@
-import * as cluster from 'cluster';
+import cluster from 'cluster';
 
 import { Launcher } from './Launcher';
-import { Main } from '../../../components/logging';
+
+import { LoggerFactory } from '@components/logging';
 
 class ClusterLauncher extends Launcher {
     public launch(): void {
         if (cluster.isMaster) {
             const workersCount = this.config.workers;
-            Main.info(`Starting ${workersCount} workers`);
+            LoggerFactory.getLogger().info(`Starting ${workersCount} workers`);
             for (let i = 0; i < workersCount; i++) {
                 cluster.fork();
             }

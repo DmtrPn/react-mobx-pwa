@@ -4,17 +4,26 @@
     "allowJs": true,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
-    "lib": ["es6", "es2017"],
+    "lib": ["es6", "ES2019"],
+    "target": "ES2019",
     "module": "commonjs",
     "moduleResolution": "node",
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noUnusedLocals": true,
+    "skipLibCheck": true,
     "outDir": "dist",
     "rootDir": "src",
     "sourceMap": false,
     "suppressImplicitAnyIndexErrors": true,
-    "target": "ES6",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "baseUrl": "src",
+    "paths": {
+      "@core/*": ["core/*"],
+      "@components/*": ["components/*"],
+      "@modules/*": ["modules/*"]
+    },
     "typeRoots": [
       "node_modules/@types",
       "@types"

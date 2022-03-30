@@ -1,18 +1,19 @@
-import * as express from 'express';
+import { NestExpressApplication } from '@nestjs/platform-express';
 
-import { Main } from '../../../components/logging';
-import { Config, ConfigType, ServerConfig } from '../../config';
+import { LoggerFactory } from '@components/logging';
+
+import { Config, ConfigName, ServerConfig } from '../../config';
 
 const argv = require('yargs').argv;
 
 class Launcher {
-    protected app: express.Application;
+    protected app: NestExpressApplication;
 
     protected config: ServerConfig;
 
-    constructor(app: express.Application) {
+    constructor(app: NestExpressApplication) {
         this.app = app;
-        this.config = <ServerConfig>Config.getInstance().getConfig(ConfigType.Server);
+        this.config = <ServerConfig>Config.getConfig(ConfigName.Server);
     }
 
     public launch(): void {
@@ -22,10 +23,9 @@ class Launcher {
     protected startServer(): void {
         const host = this.config.host;
         let port: number;
-        // console.log
-        argv.port ? port = argv.port : port = this.config.port;
-        this.app.listen({ host, port }, () => {
-            Main.info(`Server started at http://${host}:${port}`);
+        port = argv.port || this.config.port;
+        this.app.listen(port, host, () => {
+            LoggerFactory.getLogger().info(`Server started at http://${host}:${port}`);
         });
     }
 }

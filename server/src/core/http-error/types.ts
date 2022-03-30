@@ -5,4 +5,7 @@ export enum ErrorCode {
     Forbidden = 403,
     NotFound = 404,
     UnprocessableEntity = 422,
+    Conflict = 409,
+    EntityTooLarge = 413,
+    FailedDependency = 424,
 }
