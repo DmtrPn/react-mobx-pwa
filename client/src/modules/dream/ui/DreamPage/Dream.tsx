@@ -2,7 +2,6 @@ import * as React from 'react';
 
 import * as style from './Dream.scss';
 
-import { Page } from '@common/Page';
 import { DreamParams } from '@dream/store/Dream';
 
 export interface DreamProps {
@@ -16,20 +15,18 @@ export function Dream({
     dreams,
 }: Props): JSX.Element {
     return (
-        <Page>
-            <div className={style.root}>
-                <div className={style.title}>
-                    Dream Page
-                </div>
-                {dreams.map(dream =>
-                    <div
-                        key={dream.id}
-                        className={style.dream}
-                    >
-                        {dream.name}
-                    </div>,
-                )}
+        <div className={style.root}>
+            <div className={style.title}>
+                Dream Page
             </div>
-        </Page>
+            {dreams.map(dream =>
+                <div
+                    key={dream.id}
+                    className={style.dream}
+                >
+                    {dream.name}
+                </div>,
+            )}
+        </div>
     );
 }

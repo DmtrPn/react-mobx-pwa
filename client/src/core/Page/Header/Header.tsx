@@ -1,7 +1,8 @@
 import * as React from 'react';
 
 import * as style from './Header.scss';
-import { Navigation } from '../Navigation';
+
+import { Navigation } from './Navigation';
 
 export function Header(): JSX.Element {
     return (

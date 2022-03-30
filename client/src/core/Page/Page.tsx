@@ -3,20 +3,20 @@ import * as React from 'react';
 import * as style from './Page.scss';
 import './reset.scss';
 
-import { Header } from '../Header';
+import { Router } from '@core/Router';
+
+import { Header } from './Header';
 
 export interface PageProps {
     children?: React.ReactNode;
 }
 
-export function Page({
-    children,
-}: PageProps): JSX.Element {
+export function Page(): JSX.Element {
     return (
     <div className={style.root}>
         <Header />
         <div className={style.content}>
-            {children}
+            <Router />
         </div>
     </div>);
 }

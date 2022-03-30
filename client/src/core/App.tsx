@@ -3,12 +3,12 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'mobx-react';
 
 import { store } from '@store';
-import { Router } from '@core/Router';
+import { Page } from '@core/Page';
 
 export function App(): JSX.Element {
     return (<Provider { ...store } >
         <BrowserRouter>
-            <Router />
+            <Page />
         </BrowserRouter>
     </Provider>);
 }

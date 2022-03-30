@@ -1,5 +1,2 @@
-import { WishContainer as WishPage } from './WishContainer';
+export { WishContainer as WishPage } from './WishContainer';
 
-export {
-    WishPage
-};
