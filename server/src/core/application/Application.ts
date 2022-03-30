@@ -19,7 +19,7 @@ const PUBLIC_PATH = path.join(__dirname, '../../../../public');
 const INDEX_HTML_PATH = path.join(PUBLIC_PATH, 'index.html');
 const API_BASIC_URL = '/api';
 
-const withHttps = process.env.NODE_ENV === 'development';
+const withHttps = process.env.CURRENT_ENV === 'development';
 
 class Application {
 
@@ -31,8 +31,8 @@ class Application {
     }
 
     public async init(): Promise<void> {
-        const key = withHttps && fs.readFileSync(process.env.SSL_KEY); // path to *.key witch generate on Step 2 (README).
-        const cert = withHttps && fs.readFileSync(process.env.SSL_CRT); // path to *.crt witch generate on Step 2 (README).
+        const key = withHttps && !!process.env.SSL_KEY && fs.readFileSync(process.env.SSL_KEY); // path to *.key witch generate on Step 2 (README).
+        const cert = withHttps && !!process.env.SSL_CRT && fs.readFileSync(process.env.SSL_CRT); // path to *.crt witch generate on Step 2 (README).
 
         this.app = await NestFactory.create(AppModule, {
             logger: ['error', 'warn', 'debug'],

@@ -8,6 +8,7 @@ const {
     BACKEND_HOST,
     BACKEND_PORT,
 } = process.env;
+
 module.exports = {
     server: {
         env: 'dev',

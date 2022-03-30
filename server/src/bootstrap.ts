@@ -54,6 +54,6 @@ Response data: ${JSON.stringify(error.response.data)}`);
     }
 });
 
-if (!process.env.NODE_ENV) {
-    process.env.NODE_ENV = 'dev';
+if (!process.env.CURRENT_ENV) {
+    process.env.CURRENT_ENV = 'dev';
 }
