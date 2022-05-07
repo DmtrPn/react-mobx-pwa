@@ -22,6 +22,14 @@ module.exports = {
                 },
             }
         ],
+        'no-multiple-empty-lines': [
+            'error',
+            {
+                max: 1,
+                maxBOF: 0,
+                maxEOF: 0,
+            }
+        ],
         'react/jsx-filename-extension': 0,
         'import/extensions': 0,
         'import/no-extraneous-dependencies': 0,
@@ -36,5 +44,33 @@ module.exports = {
                 ignoreRestSiblings: true,
                 argsIgnorePattern: '_',
             }],
+        '@typescript-eslint/member-ordering': [
+            'error',
+            {
+                default: [
+                    'public-static-field',
+                    'protected-static-field',
+                    'private-static-field',
+                    'public-static-method',
+                    'protected-static-method',
+                    'private-static-method',
+                    'public-instance-field',
+                    'protected-instance-field',
+                    'private-instance-field',
+                    'public-constructor',
+                    'protected-constructor',
+                    'private-constructor',
+                    'public-set',
+                    'public-get',
+                    'public-instance-method',
+                    'protected-set',
+                    'protected-get',
+                    'protected-instance-method',
+                    'private-set',
+                    'private-get',
+                    'private-instance-method'
+                ],
+            },
+        ],
     }
 }

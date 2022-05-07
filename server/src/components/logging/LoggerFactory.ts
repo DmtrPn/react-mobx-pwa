@@ -7,12 +7,6 @@ import { Config, ConfigName } from '@core/config';
 export class LoggerFactory {
 
     private static logger: log4js.Logger;
-    protected readonly logConfig!: LogConfig;
-    protected isLoggerLibInitialized = false;
-
-    constructor(config: LogConfig) {
-        this.logConfig = config;
-    }
 
     public static getLogger(): log4js.Logger {
         if (!this.logger) {
@@ -21,6 +15,13 @@ export class LoggerFactory {
         }
 
         return this.logger;
+    }
+
+    protected readonly logConfig!: LogConfig;
+    protected isLoggerLibInitialized = false;
+
+    private constructor(config: LogConfig) {
+        this.logConfig = config;
     }
 
     public create(category: string = 'app') {

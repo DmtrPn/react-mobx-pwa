@@ -19,15 +19,15 @@ class ValidationError extends HttpError {
         return ErrorCode.UnprocessableEntity;
     }
 
-    protected get errorCode(): string {
-        return 'Validation';
-    }
-
     public get data(): ValidationErrorData {
         return {
             ...super.data,
             validationErrors: this.validationErrors,
         };
+    }
+
+    protected get errorCode(): string {
+        return 'Validation';
     }
 
     protected get validationErrors(): ValidationErrorItems {

@@ -43,8 +43,6 @@ async function buildSvgSprite() {
                 }
                 resolve();
             });
-
-
         });
     });
 }
