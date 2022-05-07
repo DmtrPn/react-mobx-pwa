@@ -1,6 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 
-import * as style from './Wish.scss';
+import style from './Wish.scss';
 
 export interface WishProps {
 

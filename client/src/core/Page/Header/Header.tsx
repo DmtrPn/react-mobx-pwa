@@ -1,6 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 
-import * as style from './Header.scss';
+import style from './Header.scss';
 
 import { Navigation } from './Navigation';
 

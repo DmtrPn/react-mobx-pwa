@@ -9,7 +9,7 @@ export class WishController {
 
     @Get('/')
     public async getWishes(): Promise<{ id: number, name: string }[]> {
-        return await this.wishService.getWishes();
+        return this.wishService.getWishes();
     }
 
 }

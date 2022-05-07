@@ -1,6 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 
-import * as style from './NotFound.scss';
+import style from './NotFound.scss';
 
 export function NotFound() {
     return (

@@ -1,6 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 
-import * as style from './Home.scss';
+import style from './Home.scss';
 
 export function HomePage(): JSX.Element {
     return (

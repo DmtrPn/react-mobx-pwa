@@ -1,27 +1,19 @@
-import * as React from 'react';
+import React from 'react';
 
-import * as style from './Icon.scss';
-// import { IconType } from './IconType';
+import style from './Icon.scss';
 
-export interface IconProps {
-    type:  any; // IconType;
-    onClick?: React.MouseEventHandler<SVGSVGElement>;
-    color?: string;
-    svgSize?: string | number;
+import { IconType } from './IconType';
+
+interface IconProps {
+    type: IconType;
 }
 
-export const Icon = ({
-                         type,
-                         onClick,
-                         color,
-                         svgSize,
-                     }: IconProps): JSX.Element => (
-    <svg
-        className={`${style.root} type_${type}`}
-        onClick={onClick}
-        color={color}
-        fontSize={svgSize}
-    >
-        <use xlinkHref={`#${type}`} />
-    </svg>
-);
+export function Icon({
+    type,
+}: IconProps): JSX.Element {
+    return (
+        <svg className={style.root}>
+            <use xlinkHref={`#${type}`} />
+        </svg>
+    );
+}

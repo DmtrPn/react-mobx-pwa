@@ -7,14 +7,14 @@ export interface BaseGatewayParams {
     requestId: string;
 }
 
-export abstract class Gateway {
+export abstract class Gateway<P extends BaseGatewayParams> {
     protected requestId: string;
     protected backendClient: BackendHttpClient;
     protected configDic: { [key: string]: string } | any;
 
     protected abstract logger: Logger;
 
-    constructor({ requestId }: BaseGatewayParams) {
+    constructor({ requestId }: P) {
         this.requestId = requestId;
     }
 
@@ -25,19 +25,19 @@ export abstract class Gateway {
     }
 
     protected async post<T = any>(url: string, data?: any, config?: AxiosRequestConfig): Promise<AxiosResponse<T>> {
-        return await this.backendHttpClient.post<T>(url, data, config);
+        return this.backendHttpClient.post<T>(url, data, config);
     }
 
     protected async put<T = any>(url: string, data?: any, config?: AxiosRequestConfig): Promise<AxiosResponse<T>> {
-        return await this.backendHttpClient.put<T>(url, data, config);
+        return this.backendHttpClient.put<T>(url, data, config);
     }
 
     protected async get<T = any>(url: string, config?: AxiosRequestConfig): Promise<AxiosResponse<T>> {
-        return await this.backendHttpClient.get<T>(url, config);
+        return this.backendHttpClient.get<T>(url, config);
     }
 
     protected async delete<T = any>(url: string, config?: AxiosRequestConfig): Promise<AxiosResponse<T>> {
-        return await this.backendHttpClient.delete<T>(url, config);
+        return this.backendHttpClient.delete<T>(url, config);
     }
 
     protected abstract initBackendHttpClient(): BackendHttpClient;

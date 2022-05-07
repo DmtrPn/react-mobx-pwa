@@ -34,8 +34,8 @@ export const swRegister = () => {
         }).then((subscription) => {
         // get public key for user
             const rawKey = subscription.getKey
-            ? subscription.getKey('p256dh')
-            : '';
+                ? subscription.getKey('p256dh')
+                : '';
             key = rawKey
                 // @ts-ignore
                 ? btoa(String.fromCharCode.apply(null, new Uint8Array(rawKey)))
@@ -65,7 +65,7 @@ export const swRegister = () => {
         }).catch(error => { console.log('ERROE: ', error); });
 
     const ele = document.getElementById('getPush');
-    ele!.onclick = function() {
+    ele!.onclick = function () {
         const payload = `Date: ${new Date().toUTCString()}`;
         const delay = 5;
 

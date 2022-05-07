@@ -1,14 +1,14 @@
 export type BodyParserError = {
     status: number;
     type:
-        | 'entity.too.large'
-        | 'encoding.unsupported'
-        | 'request.aborted'
-        | 'request.size.invalid'
-        | 'stream.encoding.set'
-        | 'parameters.too.many'
-        | 'charset.unsupported'
-        | 'encoding.unsupported';
+    | 'entity.too.large'
+    | 'encoding.unsupported'
+    | 'request.aborted'
+    | 'request.size.invalid'
+    | 'stream.encoding.set'
+    | 'parameters.too.many'
+    | 'charset.unsupported'
+    | 'encoding.unsupported';
     limit?: number;
     expected?: number;
     length?: number;

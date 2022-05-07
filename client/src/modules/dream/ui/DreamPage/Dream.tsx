@@ -1,6 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 
-import * as style from './Dream.scss';
+import style from './Dream.scss';
 
 import { DreamParams } from '@dream/store/Dream';
 

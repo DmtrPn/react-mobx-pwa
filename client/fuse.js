@@ -1,4 +1,4 @@
-const { task } = require("fuse-box/sparky");
+const { task } = require('fuse-box/sparky');
 
 require('./fusebox/context');
 const clean = require('./fusebox/clean');

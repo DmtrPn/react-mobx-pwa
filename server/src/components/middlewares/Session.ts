@@ -23,7 +23,7 @@ export class Session implements NestMiddleware {
     private setSession = expressSession(sessionConfig);
 
     public use(req: ExpressRequest, res: Response, next: NextFunction) {
-        this.setSession(req, res, async() => {
+        this.setSession(req, res, async () => {
             if (!req.session) {
                 throw new Error('Session not initialized (may be redis problem?)');
             }

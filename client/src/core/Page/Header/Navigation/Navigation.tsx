@@ -1,8 +1,8 @@
-import * as React from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import classnames from 'classnames';
 
-import * as style from './Navigation.scss';
+import style from './Navigation.scss';
 
 const locations: { url: string, label: string }[] = [
     {

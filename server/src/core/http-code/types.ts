@@ -3,6 +3,7 @@ export enum Success {
     Created = 201,
 }
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare
 export enum Error {
     InternalServerError = 500,
     UnprocessableEntity = 422,

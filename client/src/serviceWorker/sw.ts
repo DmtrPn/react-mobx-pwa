@@ -48,7 +48,7 @@ self.addEventListener('fetch', (event: any) => {
                             cache.put(event.request.url, response.clone());
                         }
                         return response;
-                    }).catch((err) => {
+                    }).catch((err_) => {
                         // Network request failed, try to get it from the cache.
                         return cache.match(event.request);
                     });
