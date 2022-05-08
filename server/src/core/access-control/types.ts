@@ -16,7 +16,14 @@ export enum ActionType {
     Remove = 'remove',
 }
 
-export type EntityPermission = {
-    any?: Set<RoleName>;
+export type Permission = {
+    adminAccess?: boolean;
+    moderatorAccess?: boolean;
+    any: Set<RoleName>;
     own?: Set<RoleName>;
 };
+
+export interface RuleData<E extends object = object> {
+    user: object;
+    entity: E;
+}
