@@ -11,11 +11,12 @@ import { EntityPermission } from './abstract/EntityPermission';
 
 export interface CanData {
     userRoles: RoleName[];
+    userEntities: EntityName[];
     entityName: EntityName;
     action: ActionType;
 }
 
-export interface CanOwnData extends CanData {
+export interface CanOwnData extends Omit<CanData, 'userEntities'> {
     user: object;
     entity: object;
 }
@@ -41,12 +42,15 @@ export class AccessControl {
 
     public can({
         userRoles,
+        userEntities,
         entityName,
         action,
     }: CanData): boolean {
         const entityPermission = this.getEntityPermission(entityName);
 
-        return entityPermission.hasAnyPermission(action, userRoles);
+        return entityPermission.hasAnyPermission(action, userRoles)
+            || (userEntities.includes(entityName) && entityPermission.hasModeratorPermission(action, userRoles))
+            || entityPermission.hasOwnPermission(action, userRoles);
     }
 
     public canOwn({

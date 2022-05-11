@@ -33,7 +33,8 @@ export class AccessControlGuard implements CanActivate {
         const user = this.getUser(context);
 
         return !!user && this.accessControl.can({
-            userRoles: [],
+            userRoles: (user as any).roles,
+            userEntities: (user as any).entities,
             ...action,
         });
     }
