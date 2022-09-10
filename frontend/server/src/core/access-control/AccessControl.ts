@@ -8,6 +8,7 @@ import {
 
 import { EntityRule } from './abstract/EntityRule';
 import { EntityPermission } from './abstract/EntityPermission';
+import { AuthUserData } from '@core/types';
 
 export interface CanData {
     userRoles: RoleName[];
@@ -17,7 +18,7 @@ export interface CanData {
 }
 
 export interface CanOwnData extends Omit<CanData, 'userEntities'> {
-    user: object;
+    user: AuthUserData;
     entity: object;
 }
 

@@ -1,7 +1,7 @@
 import { observable, computed, action, makeObservable } from 'mobx';
 import compact from 'lodash/compact';
 
-import { Optional, SortingOrder } from 'dobro-types/common';
+import { Optional, SortingOrder } from 'project-types/common';
 
 export interface IList<ListParams, CreateParams, UpdateParams = CreateParams, FilterParams = null, I = string> {
     ids: I[];

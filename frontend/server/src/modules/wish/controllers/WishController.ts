@@ -8,8 +8,10 @@ export class WishController {
     private wishService = new WishService();
 
     @Get('/')
-    public async getWishes(): Promise<{ id: number, name: string }[]> {
-        return this.wishService.getWishes();
+    public async getWishes(): Promise<{ wishes: { id: number, name: string }[] }> {
+        const wishes = await this.wishService.getWishes();
+
+        return { wishes };
     }
 
 }

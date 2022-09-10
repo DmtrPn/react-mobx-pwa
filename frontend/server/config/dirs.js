@@ -1,11 +1,9 @@
 const path = require('path');
 const rootDir = path.resolve(__dirname, '../');
-const servicesDir = `${rootDir}/dist/modules/**/`;
-const publicDir = `${rootDir}/../frontend/public`;
+const publicDir = `${rootDir}/../public`;
 
 module.exports = {
     rootDir,
-    servicesDir,
     publicDir,
 }
 

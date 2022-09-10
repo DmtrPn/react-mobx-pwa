@@ -14,9 +14,9 @@ import { Config, ConfigName, ServerConfig } from '@core/config';
 
 import { Launcher, ClusterLauncher } from './launcher';
 import { AppModule } from '../../AppModule';
+import { dirPath } from '@core/types/dirPath';
 
-const PUBLIC_PATH = path.join(__dirname, '../../../../public');
-const INDEX_HTML_PATH = path.join(PUBLIC_PATH, 'index.html');
+const INDEX_HTML_PATH = path.join(dirPath.publicDir, 'index.html');
 const API_BASIC_URL = '/api';
 
 const withHttps = process.env.CURRENT_ENV === 'development';
@@ -49,7 +49,7 @@ class Application {
 
         this.initLogger();
 
-        this.app.use(express.static(PUBLIC_PATH));
+        this.app.use(express.static(dirPath.publicDir));
         this.app.use(expressSession(sessionConfig));
 
         this.app.use((req: express.Request, res: express.Response, next: express.NextFunction) => {

@@ -19,7 +19,7 @@ export class WishApi {
         try {
             const res = await axios.get(`${WISH_URL}`);
 
-            result = res.data;
+            result = res.data.wishes;
         } catch (e) {
         }
 

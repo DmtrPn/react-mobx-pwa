@@ -19,9 +19,9 @@ import { AppModule } from '../../AppModule';
 import { DbConnector } from '@core/db-connector';
 import { DefaultValidationPipe } from '@components/pipes/DefaultValidationPipe';
 import { AccessControlGuard } from '@core/access-control/AccessControlGuard';
+import { dirPath } from '@core/types/dirPath';
 
-const PUBLIC_PATH = path.join(__dirname, '../../../../../frontend/public');
-const INDEX_HTML_PATH = path.join(PUBLIC_PATH, 'index.html');
+const INDEX_HTML_PATH = path.join(dirPath.publicDir, 'index.html');
 const API_BASIC_URL = '/api';
 
 const withHttps = process.env.CURRENT_ENV === 'development';
@@ -66,7 +66,7 @@ class Application {
 
         this.initLogger();
 
-        this.app.use(express.static(PUBLIC_PATH));
+        this.app.use(express.static(dirPath.publicDir));
         this.app.use(expressSession(sessionConfig));
 
         this.app.use(passport.initialize());
