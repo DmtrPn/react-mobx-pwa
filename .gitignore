@@ -1,10 +1,12 @@
 .idea/
+.DS_Store
 node_modules/
 /build
 /public
 /dist
-server/config/local.js
-IconType.ts
+frontend/server/config/local.js
+backend/config/local.js
 *.log
 *.scss.d.ts
 *.css.d.ts
+.fusebox

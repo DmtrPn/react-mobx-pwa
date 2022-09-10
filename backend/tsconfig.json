@@ -1,0 +1,44 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "emitDecoratorMetadata": true,
+    "lib": ["es6", "ES2019"],
+    "target": "ES2019",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "skipLibCheck": true,
+    "outDir": "dist",
+    "rootDir": "src",
+    "sourceMap": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "baseUrl": "src",
+    "paths": {
+      "@core/*": ["core/*"],
+      "@utils/*": ["core/utils/*"],
+      "@common/*": ["components/common/*"],
+      "@components/*": ["components/*"],
+      "@catalog/*": ["modules/catalog/*"],
+      "@dream/*": ["modules/dream/*"],
+      "@wish/*": ["modules/wish/*"],
+      "@user/*": ["modules/user/*"],
+      "@bot/*": ["modules/bot/*"]
+    },
+    "typeRoots": [
+      "../node_modules/@types",
+      "node_modules/@types",
+      "@types"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "config",
+    "dist"
+  ]
+}

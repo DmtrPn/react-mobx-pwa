@@ -1,0 +1,13 @@
+{
+  "name": "react-mobx-pwa",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "frontend",
+    "backend",
+    "types"
+  ],
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}

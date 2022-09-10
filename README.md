@@ -1,6 +1,13 @@
 # react-mobx-pwa
 
 
+### dirs
+- backend - backend with db (typeorm + postresql), tests (jest), amplitude, access control
+- frontend/client - frontend static
+- frontend/server - backend for frontend
+
+Can be used as `client + server + backend` / `client + server` / `client + backend`
+
 ### 2 options for organizing modules on the client
 
 #### module = page
@@ -16,7 +23,7 @@
 - store `modules/dream/store`
 
 
-### folders
+#### folders
 - `api` - server interaction
 - `components` - simple (don't use store) common components like input, icons etc
 - `core` - App render and routes with locations
