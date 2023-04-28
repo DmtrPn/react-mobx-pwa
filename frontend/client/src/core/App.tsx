@@ -6,9 +6,11 @@ import { store } from '@store';
 import { Page } from '@core/Page';
 
 export function App(): JSX.Element {
-    return (<Provider { ...store } >
-        <BrowserRouter>
-            <Page />
-        </BrowserRouter>
-    </Provider>);
+    return (
+        <Provider {...store}>
+            <BrowserRouter>
+                <Page />
+            </BrowserRouter>
+        </Provider>
+    );
 }

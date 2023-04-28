@@ -6,7 +6,6 @@ import { assignParams } from '@utils/assignParams';
 import { updateAttributes } from '@utils/updateAttributes';
 
 export abstract class MutableData<D extends object> {
-
     protected numbersFields = new Set<string>();
     protected abstract mutableKeys: (keyof D)[];
 
@@ -44,8 +43,7 @@ export abstract class MutableData<D extends object> {
 
     private formatData(data: D | Partial<D>): Partial<D> | D {
         return mapValues(data, (value, key) => {
-            return this.numbersFields.has(key) && !!value ? Number(value) as any : value;
+            return this.numbersFields.has(key) && !!value ? (Number(value) as any) : value;
         });
     }
-
 }

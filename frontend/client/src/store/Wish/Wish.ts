@@ -22,3 +22,5 @@ export class WishStore {
         this.wishList = wishes;
     }
 }
+
+export const wishStore = new WishStore();

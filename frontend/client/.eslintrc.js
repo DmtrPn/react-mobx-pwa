@@ -3,18 +3,29 @@
 module.exports = {
     parser: '@typescript-eslint/parser',
     plugins: ['@typescript-eslint'],
-    ignorePatterns: '*.scss.d.ts',
     parserOptions: {
         tsconfigRootDir: __dirname,
         project: './tsconfig.json',
     },
     extends: [
-        'eslint-config-airbnb-typescript',
+        'airbnb-typescript/base',
+        'prettier',
     ],
     rules: {
-        '@typescript-eslint/indent': ['error', 4],
+        'indent': 'off',
+        // '@typescript-eslint/indent': [
+        //     'error',
+        //     4,
+        //     {
+        //         SwitchCase: 1,
+        //         FunctionExpression: {
+        //             parameters: 0,
+        //         },
+        //     }
+        // ],
         'react/jsx-filename-extension': 0,
         'import/extensions': 0,
+        'import/no-extraneous-dependencies': 0,
         'no-multiple-empty-lines': [
             'error',
             {
@@ -23,17 +34,22 @@ module.exports = {
                 maxEOF: 0,
             }
         ],
-        'import/no-extraneous-dependencies': 0,
+        'lines-between-class-members': 'off',
         '@typescript-eslint/lines-between-class-members': [
-            "error",
-            "always",
-            { "exceptAfterSingleLine": true }
+            'error',
+            'always',
+            {
+                exceptAfterSingleLine: true,
+                // exceptAfterOverload: true
+            },
         ],
         '@typescript-eslint/no-unused-vars': [
             'error',
             {
                 ignoreRestSiblings: true,
                 argsIgnorePattern: '_',
+                // ignoreRestSiblings: '@'
+                varsIgnorePattern: 'observable|computed|action',
             }],
         '@typescript-eslint/member-ordering': [
             'error',

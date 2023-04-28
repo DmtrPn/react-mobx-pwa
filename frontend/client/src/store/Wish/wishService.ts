@@ -1,12 +1,17 @@
 import { WishApi } from '@api';
-import { store } from '@store';
+
+import { wishStore } from './Wish';
 
 class WishService {
+    private readonly wishStore = wishStore;
+    private isLoaded = false;
 
     public async load(): Promise<void> {
-        const wishes = await WishApi.getWishList();
-
-        store.wishStore.setWishes(wishes);
+        if (!this.isLoaded) {
+            this.isLoaded = true;
+            const wishes = await WishApi.getWishList();
+            this.wishStore.setWishes(wishes);
+        }
     }
 }
 

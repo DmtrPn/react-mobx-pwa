@@ -37,14 +37,9 @@ export interface OrderParams {
     order: SortingOrder;
 }
 
-export abstract class List<
-    ListParams,
-    CreateParams,
-    UpdateParams = CreateParams,
-    FilterParams = null,
-    I = string,
-> implements IList<ListParams, CreateParams, UpdateParams, FilterParams, I> {
-
+export abstract class List<ListParams, CreateParams, UpdateParams = CreateParams, FilterParams = null, I = string>
+    implements IList<ListParams, CreateParams, UpdateParams, FilterParams, I>
+{
     protected readonly identifiableFieldName: string = 'id';
 
     @observable protected filterParams: FilterParams = {} as FilterParams;
@@ -168,7 +163,7 @@ export abstract class List<
 
     @action
     public setOrderParams(params: OrderParams): void {
-        this.orderParams = params || {} as OrderParams;
+        this.orderParams = params || ({} as OrderParams);
     }
 
     public getFilteredValues(filterParams: FilterParams): ListParams[] {

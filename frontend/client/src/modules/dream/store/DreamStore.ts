@@ -22,3 +22,5 @@ export class DreamStore {
         this.dreamList = dreams;
     }
 }
+
+export const dreamStore = new DreamStore();

@@ -67,7 +67,6 @@ export const enum DateFormat {
 }
 
 export class DateHelper {
-
     // Нужно для Сафари тк там валидные даты инвалидны YYYY-MM-DD DD-MM-YYYY
     // https://stackoverflow.com/questions/4310953/invalid-date-in-safari
     public static createDate(value: string): Date {
@@ -75,7 +74,7 @@ export class DateHelper {
     }
 
     public static getTime(date: DateType): string {
-        return (new Date(date)).toLocaleString('ru-RU', { hour: 'numeric', minute: 'numeric' });
+        return new Date(date).toLocaleString('ru-RU', { hour: 'numeric', minute: 'numeric' });
     }
 
     public static format(value: DateType, formatParams: DateFormat | DateFormatItem): string {
@@ -227,5 +226,4 @@ export class DateHelper {
 
         return date;
     }
-
 }

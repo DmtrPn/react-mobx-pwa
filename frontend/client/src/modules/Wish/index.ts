@@ -1,1 +1,1 @@
-export { WishContainer as WishPage } from './WishContainer';
+export { WishPage } from './WishPage';

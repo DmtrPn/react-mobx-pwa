@@ -14,14 +14,13 @@ const DEFAULT_DREAMS = [
 ];
 
 export class DreamApi {
-    public static async getDreamList(): Promise<{ id: number, name: string }[]> {
+    public static async getDreamList(): Promise<{ id: number; name: string }[]> {
         let result = DEFAULT_DREAMS;
 
         try {
             const res = await axios.get(`${DREAM_URL}`);
             result = res.data;
-        } catch (e) {
-        }
+        } catch (e) {}
 
         return result;
     }

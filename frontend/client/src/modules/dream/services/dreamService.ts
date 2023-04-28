@@ -1,12 +1,17 @@
 import { DreamApi } from '@api';
-import { store } from '@store';
 
-class DreamService {
+import { dreamStore, DreamStore } from '../store/DreamStore';
+
+export class DreamService {
+    private readonly dreamStore: DreamStore = dreamStore;
+    private isLoaded = false;
 
     public async load(): Promise<void> {
-        const dreams = await DreamApi.getDreamList();
-
-        store.dreamStore.setDreams(dreams);
+        if (!this.isLoaded) {
+            this.isLoaded = true;
+            const dreams = await DreamApi.getDreamList();
+            this.dreamStore.setDreams(dreams);
+        }
     }
 }
 

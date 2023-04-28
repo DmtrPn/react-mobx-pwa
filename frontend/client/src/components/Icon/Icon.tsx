@@ -8,9 +8,7 @@ interface IconProps {
     type: IconType;
 }
 
-export function Icon({
-    type,
-}: IconProps): JSX.Element {
+export function Icon({ type }: IconProps): JSX.Element {
     return (
         <svg className={style.root}>
             <use xlinkHref={`#${type}`} />
