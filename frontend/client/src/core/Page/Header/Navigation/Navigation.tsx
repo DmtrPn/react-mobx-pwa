@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 import style from './Navigation.scss';
 
-const locations: { url: string, label: string }[] = [
+const locations: { url: string; label: string }[] = [
     {
         url: '/',
         label: 'Главная',
@@ -22,19 +22,16 @@ const locations: { url: string, label: string }[] = [
 export const Navigation = (): JSX.Element => {
     return (
         <div className={style.linksList}>
-            {locations.map(pageLocation =>
+            {locations.map(pageLocation => (
                 <NavLink
                     // exact
                     key={pageLocation.url}
-                    className={({ isActive }) => isActive
-                        ? classnames([style.link, style.activeLink])
-                        : style.link
-                    }
+                    className={({ isActive }) => (isActive ? classnames([style.link, style.activeLink]) : style.link)}
                     to={pageLocation.url}
                 >
                     Link to {pageLocation.label}
-                </NavLink>,
-            )}
+                </NavLink>
+            ))}
         </div>
     );
 };

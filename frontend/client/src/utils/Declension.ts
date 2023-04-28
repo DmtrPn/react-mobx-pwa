@@ -3,7 +3,6 @@ import proschet from 'proschet';
 type ProschetFunction = (index: number | string) => string;
 
 export class Declension {
-
     public static get days(): ProschetFunction {
         return proschet(['день', 'дня', 'дней']);
     }
@@ -19,5 +18,4 @@ export class Declension {
     public static get months(): ProschetFunction {
         return proschet(['месяц', 'месяца', 'месяцев']);
     }
-
 }

@@ -14,14 +14,13 @@ const DEFAULT_WISHES = [
 ];
 
 export class WishApi {
-    public static async getWishList(): Promise<{ id: number, name: string }[]> {
+    public static async getWishList(): Promise<{ id: number; name: string }[]> {
         let result = DEFAULT_WISHES;
         try {
             const res = await axios.get(`${WISH_URL}`);
 
             result = res.data.wishes;
-        } catch (e) {
-        }
+        } catch (e) {}
 
         return result;
     }

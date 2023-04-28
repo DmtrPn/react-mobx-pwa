@@ -9,7 +9,4 @@ import { App } from '@core/App';
 //     swRegister();
 // }
 
-render(
-    React.createElement(App),
-    document.getElementById('app'),
-);
+render(React.createElement(App), document.getElementById('app'));

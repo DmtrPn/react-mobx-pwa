@@ -1,6 +1,8 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "suppressImplicitAnyIndexErrors": true, // will be deprecated in typescript 5.5
+    "ignoreDeprecations": "5.0",
     "target": "es2017",
     "jsx": "react",
     "allowJs": true,
@@ -16,7 +18,6 @@
     "outDir": "dist",
     "rootDir": "./",
     "sourceMap": true,
-    "suppressImplicitAnyIndexErrors": true,
     "esModuleInterop": true,
     "useDefineForClassFields": true,
     "skipDefaultLibCheck": true,

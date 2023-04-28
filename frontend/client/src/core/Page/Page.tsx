@@ -18,5 +18,6 @@ export function Page(): JSX.Element {
             <div className={style.content}>
                 <Router />
             </div>
-        </div>);
+        </div>
+    );
 }
