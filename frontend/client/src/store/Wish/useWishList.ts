@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useStore } from '@store';
 
 import { wishService } from './wishService';
@@ -10,16 +10,13 @@ interface UseWishListData {
 
 export function useWishList(): UseWishListData {
     const { wishStore } = useStore([WishStore.Name]);
-    const [wishes, setWishes] = useState<WishParams[]>(wishStore.wishes);
 
     useEffect(() => {
         const load = async () => {
             await wishService.load();
-            setWishes(wishStore.wishes);
         };
-
         load();
     }, []);
 
-    return { wishes };
+    return { wishes: wishStore.wishes };
 }

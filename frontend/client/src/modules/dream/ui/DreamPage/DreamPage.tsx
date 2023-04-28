@@ -1,4 +1,5 @@
 import React from 'react';
+import { observer } from 'mobx-react-lite';
 
 import style from './Dream.scss';
 
@@ -8,7 +9,7 @@ export interface DreamProps {}
 
 interface Props extends DreamProps {}
 
-export function DreamPage({}: Props): JSX.Element {
+export const DreamPage = observer(({}: Props): JSX.Element => {
     const { dreams } = useDreamList();
     return (
         <div className={style.root}>
@@ -20,4 +21,4 @@ export function DreamPage({}: Props): JSX.Element {
             ))}
         </div>
     );
-}
+});

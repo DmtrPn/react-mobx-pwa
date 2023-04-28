@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useStore } from '@store';
 
 import { dreamService } from '../services/dreamService';
@@ -10,16 +10,13 @@ interface UseDreamListData {
 
 export function useDreamList(): UseDreamListData {
     const { dreamStore } = useStore([DreamStore.Name]);
-    const [dreams, setDreams] = useState<DreamParams[]>(dreamStore.dreams);
 
     useEffect(() => {
         const load = async () => {
             await dreamService.load();
-            setDreams(dreamStore.dreams);
         };
-
         load();
     }, []);
 
-    return { dreams };
+    return { dreams: dreamStore.dreams };
 }

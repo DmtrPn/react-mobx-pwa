@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 import { App } from '@core/App';
 
@@ -9,4 +9,7 @@ import { App } from '@core/App';
 //     swRegister();
 // }
 
-render(React.createElement(App), document.getElementById('app'));
+const container = document.getElementById('app');
+const root = createRoot(container!);
+
+root.render(React.createElement(App));
