@@ -1,6 +1,6 @@
 import { DreamApi } from '@api';
 
-import { dreamStore, DreamStore } from '../store/DreamStore';
+import { DreamParams, dreamStore, DreamStore } from '../store/DreamStore';
 
 export class DreamService {
     private readonly dreamStore: DreamStore = dreamStore;
@@ -12,6 +12,10 @@ export class DreamService {
             const dreams = await DreamApi.getDreamList();
             this.dreamStore.setDreams(dreams);
         }
+    }
+
+    public async update(dreamId: number, params: Partial<Omit<DreamParams, 'id'>>): Promise<void> {
+        this.dreamStore.updateDream(dreamId, params);
     }
 }
 

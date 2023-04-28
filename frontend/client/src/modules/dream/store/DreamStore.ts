@@ -18,8 +18,12 @@ export class DreamStore {
         return this.dreamList;
     }
 
-    public setDreams(dreams: DreamParams[]) {
+    public setDreams(dreams: DreamParams[]): void {
         this.dreamList = dreams;
+    }
+
+    public updateDream(dreamId: number, params: Partial<Omit<DreamParams, 'id'>>): void {
+        this.dreamList = this.dreamList.map(dream => (dream.id === dreamId ? { ...dream, ...params } : dream));
     }
 }
 
