@@ -1,1 +1,1 @@
-export { DreamContainer as DreamPage } from './DreamContainer';
+export { DreamPage } from './DreamPage';

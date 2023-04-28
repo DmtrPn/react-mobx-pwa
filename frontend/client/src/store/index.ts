@@ -1,5 +1,7 @@
-import { DreamStore } from '@dream/store/Dream';
-import { WishStore } from './Wish/Wish';
+import pick from 'lodash/pick';
+
+import { DreamStore, dreamStore } from '@dream/store/DreamStore';
+import { WishStore, wishStore } from './Wish/Wish';
 
 export interface StoreState {
     dreamStore: DreamStore;
@@ -7,6 +9,12 @@ export interface StoreState {
 }
 
 export const store: StoreState = {
-    dreamStore: new DreamStore(),
-    wishStore: new WishStore(),
+    dreamStore,
+    wishStore,
 };
+
+type Params = keyof StoreState;
+
+export function useStore<T extends Params>(stores: T[]): Pick<StoreState, T> {
+    return pick(store, stores);
+}

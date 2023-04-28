@@ -1,17 +1,10 @@
 import React from 'react';
 
 import style from './Wish.scss';
+import { useWishList } from '@store/Wish/useWishList';
 
-export interface WishProps {}
-
-interface Props extends WishProps {
-    wishes: {
-        id: number;
-        name: string;
-    }[];
-}
-
-export function Wish({ wishes }: Props): JSX.Element {
+export function WishPage(): JSX.Element {
+    const { wishes } = useWishList();
     return (
         <div className={style.root}>
             <div className={style.title}>Wish Page</div>

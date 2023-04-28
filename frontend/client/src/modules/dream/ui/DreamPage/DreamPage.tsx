@@ -2,15 +2,14 @@ import React from 'react';
 
 import style from './Dream.scss';
 
-import { DreamParams } from '@dream/store/Dream';
+import { useDreamList } from '../../hooks/useDreamList';
 
 export interface DreamProps {}
 
-interface Props extends DreamProps {
-    dreams: DreamParams[];
-}
+interface Props extends DreamProps {}
 
-export function Dream({ dreams }: Props): JSX.Element {
+export function DreamPage({}: Props): JSX.Element {
+    const { dreams } = useDreamList();
     return (
         <div className={style.root}>
             <div className={style.title}>Dream Page</div>
