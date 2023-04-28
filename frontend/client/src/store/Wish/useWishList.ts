@@ -10,12 +10,12 @@ interface UseWishListData {
 
 export function useWishList(): UseWishListData {
     const { wishStore } = useStore([WishStore.Name]);
-    const [wishes, setDreams] = useState<WishParams[]>(wishStore.wishes);
+    const [wishes, setWishes] = useState<WishParams[]>(wishStore.wishes);
 
     useEffect(() => {
         const load = async () => {
             await wishService.load();
-            setDreams(wishStore.wishes);
+            setWishes(wishStore.wishes);
         };
 
         load();
