@@ -48,7 +48,7 @@ module.exports = {
             {
                 ignoreRestSiblings: true,
                 argsIgnorePattern: '_',
-                varsIgnorePattern: 'observable|computed|action',
+                varsIgnorePattern: 'observable|computed|action|Test',
             }],
         '@typescript-eslint/member-ordering': [
             'error',

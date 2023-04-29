@@ -73,6 +73,11 @@ export class DateHelper {
         return parseISO(value);
     }
 
+    public static now(): Date {
+        return new Date();
+    }
+
+
     public static getTime(date: DateType): string {
         return new Date(date).toLocaleString('ru-RU', { hour: 'numeric', minute: 'numeric' });
     }

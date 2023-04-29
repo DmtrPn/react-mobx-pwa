@@ -14,7 +14,7 @@ export class WishStore {
         makeAutoObservable(this);
     }
 
-    public get wishes(): WishParams[] {
+    public get wishes(): Readonly<WishParams>[] {
         return this.wishList;
     }
 

@@ -14,7 +14,7 @@ export class DreamStore {
         makeAutoObservable(this);
     }
 
-    public get dreams(): DreamParams[] {
+    public get dreams(): Readonly<DreamParams>[] {
         return this.dreamList;
     }
 
