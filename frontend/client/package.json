@@ -15,6 +15,7 @@
     "csscomb": "csscomb -c .csscomb.json ./src",
     "checkTypes": "tsc --noEmit",
     "clean:dist": "rm -rf dist",
+    "test:f": "NODE_ENV=mock jest --detectOpenHandles",
     "test:u": "NODE_ENV=mock jest --detectOpenHandles .*.unit.ts",
     "test:c": "NODE_ENV=test jest --detectOpenHandles .*.spec.ts",
     "test": "yarn test:u && yarn test:c"

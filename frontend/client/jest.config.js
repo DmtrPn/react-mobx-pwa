@@ -6,12 +6,6 @@ module.exports = {
             tsconfig: 'tsconfig.json',
         }],
     },
-    // globals: {
-    //     'ts-jest': {
-    //         diagnostics: false,
-    //         isolatedModules: true,
-    //     },
-    // },
     testRegex: '((\\.|/)(unit.ts|unit.js|spec.js|spec.ts))$',
     rootDir: 'src',
     moduleDirectories: ['node_modules', 'src'],

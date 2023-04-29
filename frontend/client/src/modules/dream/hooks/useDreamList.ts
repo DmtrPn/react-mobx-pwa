@@ -4,7 +4,7 @@ import { useStore } from '@store';
 import { dreamService } from '../services/dreamService';
 import { DreamParams, DreamStore } from '../store/DreamStore';
 
-interface UseDreamListData {
+export interface UseDreamListData {
     dreams: DreamParams[];
 }
 
