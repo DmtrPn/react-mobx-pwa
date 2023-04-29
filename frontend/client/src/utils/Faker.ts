@@ -7,7 +7,6 @@ faker.localeFallback = 'ru';
 import { DateHelper } from './DateHelper';
 
 export class Faker {
-
     public static getUuid(): string {
         return faker.datatype.uuid();
     }
@@ -43,5 +42,4 @@ export class Faker {
     public static getDate(): string {
         return DateHelper.now().toISOString();
     }
-
 }

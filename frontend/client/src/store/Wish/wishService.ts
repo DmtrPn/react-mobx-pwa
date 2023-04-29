@@ -1,4 +1,4 @@
-import { WishApi } from '@api';
+import { WishApi } from '@api/WishApi';
 
 import { wishStore } from './Wish';
 

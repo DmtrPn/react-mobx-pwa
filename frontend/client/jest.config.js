@@ -1,8 +1,17 @@
 module.exports = {
     testEnvironment: 'jsdom',
     transform: {
-        '^.+\\.tsx?$': 'ts-jest',
+        '^.+\\.tsx?$': ['ts-jest', {
+            diagnostics: true,
+            tsconfig: 'tsconfig.json',
+        }],
     },
+    // globals: {
+    //     'ts-jest': {
+    //         diagnostics: false,
+    //         isolatedModules: true,
+    //     },
+    // },
     testRegex: '((\\.|/)(unit.ts|unit.js|spec.js|spec.ts))$',
     rootDir: 'src',
     moduleDirectories: ['node_modules', 'src'],
@@ -13,6 +22,7 @@ module.exports = {
         '^@core/(.*)': '<rootDir>/core/$1',
         '^@components/(.*)': '<rootDir>/components/$1',
         '^@store/(.*)': '<rootDir>/store/$1',
+        '^@store': '<rootDir>/store/index.ts',
         '^@api/(.*)': '<rootDir>/api/$1',
         '^@modules/(.*)': '<rootDir>/modules/$1',
         '^@dream/(.*)': '<rootDir>/modules/dream/$1',

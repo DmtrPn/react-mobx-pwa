@@ -77,7 +77,6 @@ export class DateHelper {
         return new Date();
     }
 
-
     public static getTime(date: DateType): string {
         return new Date(date).toLocaleString('ru-RU', { hour: 'numeric', minute: 'numeric' });
     }
